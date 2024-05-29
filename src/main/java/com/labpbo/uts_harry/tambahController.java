@@ -3,15 +3,22 @@ package com.labpbo.uts_harry;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.*;
 
 public class tambahController {
 
+    @FXML
+    private Label fileName;
     @FXML
     private TextField nama;
     @FXML
@@ -20,10 +27,11 @@ public class tambahController {
     private TextField tel;
     @FXML
     private TextField email;
+    FileChooser fileChooser = new FileChooser();
+    File selectedFile;
 
     @FXML
-    void actTambah ()
-    {
+    void actTambah () throws IOException {
         String namaText = nama.getText();
         String nimText = nim.getText();
         String telText = tel.getText();
@@ -49,10 +57,19 @@ public class tambahController {
         {
             showAlert("Pastikan Email berupa email!", "Contoh: harryhamara@iklc.or.id");
         }
+//        cek error apabila gambar kosong
+        else if(selectedFile == null){
+            showAlert("Pastikan Photo sudah diupload!", "Contoh: harryhamara@iklc.or.id");
+        }
         else
         {
             Stage stage = (Stage) nama.getScene().getWindow();
             stage.close();
+
+
+            Path targetImgDir = Paths.get("src/main/resources/com/labpbo/uts_harry/img");
+
+            Files.copy(selectedFile.getAbsoluteFile().toPath(), targetImgDir.resolve(selectedFile.getName()));
 
             mainController.addDataToTable(namaText, nimText, telText, emailText);
         }
@@ -86,4 +103,21 @@ public class tambahController {
         this.mainController = mainController;
     }
 
+    public void openFileChooser(ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+
+//        set inital image directory
+        fileChooser.setInitialDirectory(new File("C://"));
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPG Files", "*.jpg")
+                ,new FileChooser.ExtensionFilter("PNG Files", "*.png")
+                ,new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
+        );
+
+        selectedFile = fileChooser.showOpenDialog(thisStage);
+        fileName.setText(selectedFile.getName());
+
+
+    }
 }

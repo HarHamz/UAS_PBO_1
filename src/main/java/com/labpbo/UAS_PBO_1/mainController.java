@@ -1,4 +1,4 @@
-package com.labpbo.uts_harry;
+package com.labpbo.UAS_PBO_1;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -28,6 +29,15 @@ public class mainController {
     private ObservableList<data> dataList;
 
     public void initialize() {
+
+        // Ensure tableView is not null before using it
+        if (tableView == null) {
+            System.out.println("TableView is null!");
+            tableView = new TableView<>();
+            tableView.setPlaceholder(new Label("Table is empty"));
+
+        }
+
         dataList = FXCollections.observableArrayList();
         tableView.setItems(dataList);
 

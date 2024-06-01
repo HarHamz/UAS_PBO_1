@@ -1,0 +1,101 @@
+Text, Label, Button, TableColumn
+{
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+}
+
+Text
+{
+    -fx-font-size: 2.5em;
+}
+
+Text#footer
+{
+    -fx-font-size: 1.5em;
+}
+
+Label
+{
+    -fx-font-size: 2em;
+}
+
+Label#template
+{
+    -fx-font-weight: normal;
+}
+
+TextField, TableRow
+{
+    -fx-font-family: "Inter";
+    -fx-font-size: 1.5em;
+}
+
+
+Button, TableRow, .check-box
+{
+    -fx-font-size: 1.5em;
+    -fx-alignment: CENTER;
+}
+
+.checkbox {
+    -fx-font-size: 16px;
+}
+
+.check-box .box
+{
+    -fx-background-color: white;
+    -fx-border-color:grey;
+    -fx-border-radius:3px; 
+    
+}
+    
+.check-box:selected .mark
+{
+    -fx-background-color: white;
+    
+}
+    
+.check-box:selected .box
+{
+    -fx-background-color: #28a3f4;
+}
+
+.check-box .mark
+{
+    -fx-shape: "M1.73,12.91 8.1,19.28 22.79,4.59 22.79,1.59 8.1,16.28 1.73,9.91";
+}
+
+Button
+{
+    -fx-align-items: center;
+    -fx-background-color: #0065d9;
+    -fx-border-radius: 8px;
+    -fx-border-style: none;
+    -fx-box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px;
+    -fx-box-sizing: border-box;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: pointer;
+    -fx-display: flex;
+    -fx-flex-direction: row;
+    -fx-flex-shrink: 0;
+    -fx-margin: 0;
+    -fx-padding: 10px 15px;
+    -fx-text-align: center;
+    -fx-text-transform: none;
+    -fx-transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+    -fx-user-select: none;
+    -fx--webkit-user-select: none;
+    -fx-touch-action: manipulation;
+}
+
+Button:hover
+{
+    -fx-background-color: #004089;
+    -fx-text-fill: #ffffff;
+}
+
+Button.cancel
+{
+    -fx-background-color: #252525;
+    -fx-text-fill: #ffffff;
+}

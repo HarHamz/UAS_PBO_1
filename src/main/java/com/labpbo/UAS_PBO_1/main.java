@@ -1,14 +1,13 @@
-package com.labpbo.uts_harry;
+package com.labpbo.UAS_PBO_1;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.Window;
+
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Objects;
 
 public class main extends Application {

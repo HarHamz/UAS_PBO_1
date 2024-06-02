@@ -13,6 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 
+import com.labpbo.UAS_PBO_1.model.contact_model;
+import com.labpbo.UAS_PBO_1.Data;
+
 public class tambahController {
 
     @FXML
@@ -65,11 +68,15 @@ public class tambahController {
             stage.close();
 
 
-            Path targetImgDir = Paths.get("src/main/resources/com/labpbo/uts_harry/img");
+            Path targetImgDir = Paths.get("src/main/resources/com/labpbo/UAS_PBO_1/img");
 
             Files.copy(selectedFile.getAbsoluteFile().toPath(), targetImgDir.resolve(selectedFile.getName()));
 
-            mainController.addDataToTable(namaText, nimText, telText, emailText);
+//            importing current contact to database while getting contact object and then store to table
+            Data currContact;
+            currContact = contact_model.Register(namaText, nimText,telText,emailText,selectedFile.getName());
+
+            mainController.addDataToTable(currContact.getId(),namaText, nimText, telText, emailText, selectedFile.getName());
         }
     }
 

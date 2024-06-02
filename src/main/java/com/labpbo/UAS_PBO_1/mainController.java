@@ -129,17 +129,25 @@ public class mainController {
             }
         }
 
+        Data modelData = rowsToShow.get(0);
+
         try{
             if(rowsToShow.size() > 1){
                 throw new Exception("Cannot Show more than 1");
+            }else if( modelData == null){
+                throw new Exception("Please select 1 data to show");
             }
-            System.out.println(rowsToShow);
-        } catch (Exception e) {
+
+            SceneController.switchToShowScene(actionEvent);
+            ShowController.setDataView(modelData);
+
+        }catch (Exception e){
             throw new RuntimeException(e);
         }
 
 
-        SceneController.switchToShowScene(actionEvent);
+
+
 
     }
 }

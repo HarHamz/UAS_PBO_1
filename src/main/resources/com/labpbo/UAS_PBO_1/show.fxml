@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.labpbo.UAS_PBO_1.showController">
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.labpbo.UAS_PBO_1.ShowController">
     <children>
         <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1280.0" style="-fx-background-color: #0065d9;">
             <children>
@@ -24,7 +24,7 @@
             <children>
                 <VBox alignment="CENTER" prefHeight="621.0" prefWidth="1611.0">
                     <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNXuiNo-wjMlKxUQ3IFZ_kHDl2MDKfTlPyw&amp;s" />
                             </image>
@@ -33,7 +33,7 @@
                             <children>
                                 <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <Label id="template" text="Nama">
+                                        <Label id="template" text="Name">
                                             <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                             </VBox.margin></Label>
@@ -56,19 +56,19 @@
                                 </VBox>
                                 <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <Label text="Nama">
+                                        <Label fx:id="labelName" text="*********">
                                             <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                             </VBox.margin></Label>
-                                        <Label text="NIM">
+                                        <Label fx:id="labelNim" text="*******">
                                             <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                             </VBox.margin></Label>
-                                        <Label text="No. Telp.">
+                                        <Label fx:id="labelPhoneNumber" text="**********">
                                             <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                             </VBox.margin></Label>
-                                        <Label text="Email">
+                                        <Label fx:id="labelEmail" text="***********">
                                             <VBox.margin>
                                                 <Insets bottom="5.0" top="5.0" />
                                             </VBox.margin></Label>
@@ -80,6 +80,7 @@
                             </children>
                         </HBox>
                         <Button mnemonicParsing="false" onAction="#actCancel" text="Kembali" />
+                  <Button mnemonicParsing="false" onAction="#actKebenaran" text="Tampilkan Data" />
                     </children>
                 </VBox>
             </children>

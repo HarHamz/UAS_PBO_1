@@ -25,8 +25,8 @@ import java.util.Objects;
 public class mainController {
 
     @FXML
-    private TableView<data> tableView;
-    private ObservableList<data> dataList;
+    private TableView<Data> tableView;
+    private ObservableList<Data> dataList;
 
     public void initialize() {
 
@@ -41,23 +41,23 @@ public class mainController {
         dataList = FXCollections.observableArrayList();
         tableView.setItems(dataList);
 
-        TableColumn<data, String> namaColumn = new TableColumn<>("Nama");
+        TableColumn<Data, String> namaColumn = new TableColumn<>("Nama");
         namaColumn.setCellValueFactory(new PropertyValueFactory<>("nama"));
         namaColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        TableColumn<data, String> nimColumn = new TableColumn<>("NIM");
+        TableColumn<Data, String> nimColumn = new TableColumn<>("NIM");
         nimColumn.setCellValueFactory(new PropertyValueFactory<>("nim"));
         nimColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        TableColumn<data, String> telColumn = new TableColumn<>("No. Telepon");
+        TableColumn<Data, String> telColumn = new TableColumn<>("No. Telepon");
         telColumn.setCellValueFactory(new PropertyValueFactory<>("tel"));
         telColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        TableColumn<data, String> emailColumn = new TableColumn<>("Email");
+        TableColumn<Data, String> emailColumn = new TableColumn<>("Email");
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        TableColumn<data, Boolean> selectedColumn = new TableColumn<>("");
+        TableColumn<Data, Boolean> selectedColumn = new TableColumn<>("");
         selectedColumn.setCellValueFactory(cellData -> cellData.getValue().selectedProperty());
         selectedColumn.setCellFactory(col -> new CheckBoxTableCell<>());
 
@@ -78,8 +78,8 @@ public class mainController {
 
     @FXML
     void hapusData(ActionEvent event) {
-        List<data> rowsToRemove = new ArrayList<>();
-        for (data rowData : dataList) {
+        List<Data> rowsToRemove = new ArrayList<>();
+        for (Data rowData : dataList) {
             if (rowData.isSelected()) {
                 rowsToRemove.add(rowData);
             }
@@ -104,12 +104,17 @@ public class mainController {
         addStage.show();
     }
 
-    public void addDataToTable(String nama, String nim, String tel, String email) {
+    public void addDataToTable(Integer id, String nama, String nim, String tel, String email, String img_str) {
         int newIndex = dataList.size() + 1;
-        data newData = new data(newIndex, nama, nim, tel, email);
+        Data newData = new Data(id, nama, nim, tel, email, img_str);
         dataList.add(newData);
         System.out.println("adding data to list");
         tableView.refresh();
         System.out.println("refreshed");
+    }
+
+    public void showData(ActionEvent actionEvent) throws IOException {
+//        pindah ke scene main
+        SceneController.switchToShowScene(actionEvent);
     }
 }

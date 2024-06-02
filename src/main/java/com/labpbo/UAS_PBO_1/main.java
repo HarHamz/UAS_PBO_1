@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+import com.labpbo.UAS_PBO_1.db_config;
+
 public class main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,6 +24,7 @@ public class main extends Application {
     }
 
     public static void main(String[] args) {
+        db_config.initDBConnection();
         launch();
     }
 }

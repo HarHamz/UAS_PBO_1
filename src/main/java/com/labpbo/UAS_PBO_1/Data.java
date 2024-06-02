@@ -2,24 +2,29 @@ package com.labpbo.UAS_PBO_1;
 
 import javafx.beans.property.*;
 
-public class data {
-    private final IntegerProperty no = new SimpleIntegerProperty();
+public class Data {
+    private final IntegerProperty id = new SimpleIntegerProperty();
     private final StringProperty nama = new SimpleStringProperty();
     private final StringProperty nim = new SimpleStringProperty();
     private final StringProperty tel = new SimpleStringProperty();
     private final StringProperty email = new SimpleStringProperty();
+    private final StringProperty img_str = new SimpleStringProperty();
 
     private final BooleanProperty selected;
 
-    public data(int no, String nama, String nim, String tel, String email) {
+    public Data(int id, String nama, String nim, String tel, String email, String img_str) {
+        this.id.set(id);
         this.nama.set(nama);
         this.nim.set(nim);
         this.tel.set(tel);
         this.email.set(email);
+        this.img_str.set(img_str);
         this.selected = new SimpleBooleanProperty(false);
-
     }
 
+    public Integer getId() {
+        return id.get();
+    }
     public String getNama() {
         return nama.get();
     }
@@ -38,7 +43,7 @@ public class data {
 
     // Property getter methods
     public IntegerProperty noProperty() {
-        return no;
+        return id;
     }
 
     public StringProperty namaProperty() {

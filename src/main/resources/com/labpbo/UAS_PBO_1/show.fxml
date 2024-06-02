@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.labpbo.UAS_PBO_1.showController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1280.0" style="-fx-background-color: #0065d9;">
+            <children>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Manager - UTS Lab PBO 1">
+                </Text>
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #f5f5f5;" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox alignment="CENTER" prefHeight="621.0" prefWidth="1611.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNXuiNo-wjMlKxUQ3IFZ_kHDl2MDKfTlPyw&amp;s" />
+                            </image>
+                        </ImageView>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label id="template" text="Nama">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label id="template" text="NIM">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label id="template" text="No. Telp.">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label id="template" text="Email">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Nama">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label text="NIM">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label text="No. Telp.">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                        <Label text="Email">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin></Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" text="Kembali" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="1280.0">
+            <children>
+                <Text id="footer" strokeType="OUTSIDE" strokeWidth="0.0" text="© Harry Ernesto Simarmata, 2024" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

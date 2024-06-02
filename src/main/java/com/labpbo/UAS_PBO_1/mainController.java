@@ -1,5 +1,6 @@
 package com.labpbo.UAS_PBO_1;
 
+import com.labpbo.UAS_PBO_1.model.contact_model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +28,8 @@ public class mainController {
     @FXML
     private TableView<Data> tableView;
     private ObservableList<Data> dataList;
+    ArrayList <Data> dataBarang = contact_model.getAllItems();
+
 
     public void initialize() {
 
@@ -40,6 +43,7 @@ public class mainController {
 
         dataList = FXCollections.observableArrayList();
         tableView.setItems(dataList);
+        dataList.addAll(dataBarang);
 
         TableColumn<Data, String> namaColumn = new TableColumn<>("Nama");
         namaColumn.setCellValueFactory(new PropertyValueFactory<>("nama"));
@@ -84,8 +88,11 @@ public class mainController {
                 rowsToRemove.add(rowData);
             }
         }
+
+        contact_model.deleteData(rowsToRemove);
         dataList.removeAll(rowsToRemove);
     }
+
 
     void pindah(String address, String title) throws IOException
     {
@@ -115,6 +122,24 @@ public class mainController {
 
     public void showData(ActionEvent actionEvent) throws IOException {
 //        pindah ke scene main
+        List<Data> rowsToShow = new ArrayList<>();
+        for (Data rowData : dataList) {
+            if (rowData.isSelected()) {
+                rowsToShow.add(rowData);
+            }
+        }
+
+        try{
+            if(rowsToShow.size() > 1){
+                throw new Exception("Cannot Show more than 1");
+            }
+            System.out.println(rowsToShow);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
         SceneController.switchToShowScene(actionEvent);
+
     }
 }

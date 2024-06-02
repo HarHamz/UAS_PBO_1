@@ -1,5 +1,6 @@
 package com.labpbo.UAS_PBO_1;
 
+
 import javafx.beans.property.*;
 
 public class Data {
@@ -40,6 +41,8 @@ public class Data {
     public String getEmail() {
         return email.get();
     }
+
+    public String getImgStr() { return img_str.get();};
 
     // Property getter methods
     public IntegerProperty noProperty() {

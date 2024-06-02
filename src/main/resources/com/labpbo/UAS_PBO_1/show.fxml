@@ -79,7 +79,7 @@
                                 </VBox>
                             </children>
                         </HBox>
-                        <Button mnemonicParsing="false" text="Kembali" />
+                        <Button mnemonicParsing="false" onAction="#actCancel" text="Kembali" />
                     </children>
                 </VBox>
             </children>

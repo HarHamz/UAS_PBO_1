@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1280.0" style="-fx-background-color: #0065d9;">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Manager - UTS Lab PBO 1" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Manager - UAS Lab PBO 1" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #f5f5f5;" VBox.vgrow="ALWAYS">

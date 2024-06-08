@@ -60,7 +60,7 @@ public class tambahController {
         }
 //        cek error apabila gambar kosong
         else if(selectedFile == null){
-            showAlert("Pastikan Photo sudah diupload!", "Contoh: harryhamara@iklc.or.id");
+            showAlert("Pastikan Photo sudah diupload!", "");
         }
         else
         {
